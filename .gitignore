@@ -82,8 +82,8 @@ alvo/
 # No entanto, no caso de colaboração, se houver dependências ou dependências específicas da plataforma
 # sem suporte multiplataforma, o pipenv pode instalar dependências que não funcionam ou não
 # instalar todas as dependências necessárias.
-# Pipfile.lock
-
+Pipfile.lock
+Pipfile
 # arquivo de programação de batidas de aipo
 aipo-agenda
 
