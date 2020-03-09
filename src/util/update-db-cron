@@ -1,0 +1,3 @@
+* * * * * /util/update_db.sh >> /var/log/cron_logfile 2>&1
+
+

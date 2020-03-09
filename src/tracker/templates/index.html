@@ -62,7 +62,7 @@
         </div>
         <table style="width:76.45%; margin-left: 4.3%;background-color: #343a40; color: #f8f9fa; position: fixed; z-index: 9;">
             <thead >
-                <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 projetos mini" >
+                <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini" >
                     <th width="25%">Usuario</th>
                     <th width="25%">PC</th>
                     <th width="25%">Status</th>
@@ -103,10 +103,11 @@
                         <a id="b4" class="navbar-brand inactiveLink" style="display: none" href="#">Lab4</a>
                         <a id="b5" class="navbar-brand inactiveLink" style="display: none" href="#">Lab5</a>
                         <a id="b6" class="navbar-brand inactiveLink" style="display: none" href="#">Lab6</a>
+                        <a id="b7" class="navbar-brand inactiveLink" style="display: none" href="#">Lab7</a>
                         <a id="bP" class="navbar-brand inactiveLink" style="display: none" href="#">Projetos</a>
                         <a id="bM" class="navbar-brand inactiveLink" style="display: none" href="#">Mini auditório</a>
                         <a id="bS" class="navbar-brand inactiveLink" style="display: none" href="#">Sala dos Professores</a>
-                        <a class="navbar-brand inactiveLink">Usuários ativos agora: {{ active }}</a>
+                        <a id="NA" class="navbar-brand inactiveLink" style="display: ''" href="#">Número de usuários ativos: {{ active }}</a>
                       </div>
                   
                       <div class="navbar-nav mr-auto">
@@ -127,7 +128,7 @@
                                         document.getElementById("searcher").style.display = "";
                                         document.getElementById("campoPesquisaU").style.display = "";
                                         document.getElementById("campoPesquisaM").style.display = "";
-                                        $( '.filter-button-group a' ).removeClass( "lab1 lab2 lab3 lab4 lab5 lab6 projetos mini" );
+                                        $( '.filter-button-group a' ).removeClass( "lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini" );
 
                                         var filterValue = $( this ).attr( 'data-filter' );
                                         $table.isotope( {
@@ -140,7 +141,6 @@
                                         return false;
                                     }
                                 }
-                                
                                 function addC() {
                                     if (document.getElementById("tabela").style.display != ""){
                                         var $table = $( '.table' ).isotope( {
@@ -152,7 +152,7 @@
                                         document.getElementById("volB").style.display = "none";
                                         document.getElementById("pesB").style.display = "";
                                         document.getElementById("tabela").style.display = "";
-                                        $( this ).addClass( "lab1 lab2 lab3 lab4 lab5 lab6 projetos mini" );
+                                        $( this ).addClass( "lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini" );
 
                                         var filterValue = $( this ).attr( 'data-filter' );
                                         $table.isotope( {
@@ -198,7 +198,7 @@
                 <div>
                     <table style="width:90%; margin-left: 5%;background-color: #343a40; color: #f8f9fa;">
                         <thead >
-                            <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 projetos mini">
+                            <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini">
                                 <th width="25%">Usuario</th>
                                 <th width="25%">PC</th>
                                 <th width="25%">Status</th>
@@ -231,6 +231,9 @@
                                     <tr id="tabelaInfo" class="table-item mini" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000"> 
                                 {% elif 'PROF' in u %}
                                     <tr id="tabelaInfo" class="table-item prof" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">                                     
+                                {% elif 'L07' in u %}
+                                   <tr id="tabelaInfo" class="table-item lab7" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">                                     
+                                    
                                 {% else %}
                                     <tr style="background-color: #343a4064; color: #000000">
                                 {% endif %}
@@ -268,6 +271,9 @@
                                         <tr id="tabelaInfo" class="table-item row mini" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">                                      
                                     {% elif 'PROF' in u %}
                                         <tr id="tabelaInfo" class="table-item row prof" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000"> 
+                                    {% elif 'L07' in u %}
+                                        <tr id="tabelaInfo" class="table-item row lab7" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">                                     
+                                           
                                     {% else %}
                                         <tr style="background-color: #343a4064; color: #000000">
                                     {% endif %}
@@ -311,6 +317,7 @@
                     <a class="nav-item nav-link lateralLink" onclick="addC(); B4();" data-filter=".lab4" href="">LAB 4</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); B5();" data-filter=".lab5" href="">LAB 5</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); B6();" data-filter=".lab6" href="">LAB 6</a>
+                    <a class="nav-item nav-link lateralLink" onclick="addC(); B7();" data-filter=".lab7" href="">LAB 7</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); BP();" data-filter=".projetos" href="">Projetos</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); BM();" data-filter=".mini" href="">Mini auditório</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); BS();" data-filter=".prof" href="">Sala dos Professores</a>
@@ -323,6 +330,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -335,6 +343,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -347,6 +356,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -359,6 +369,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -371,6 +382,7 @@
                                 document.getElementById("b4").style.display = "";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -383,6 +395,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -395,6 +408,20 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "";
+                                document.getElementById("b7").style.display = "none";
+                                document.getElementById("bP").style.display = "none";
+                                document.getElementById("bM").style.display = "none";
+                                document.getElementById("bS").style.display = "none";
+                            }
+                            function B7(){
+                                document.getElementById("bA").style.display = "none";
+                                document.getElementById("b1").style.display = "none";
+                                document.getElementById("b2").style.display = "none";
+                                document.getElementById("b3").style.display = "none";
+                                document.getElementById("b4").style.display = "none";
+                                document.getElementById("b5").style.display = "none";
+                                document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -407,6 +434,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -419,6 +447,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "";
                                 document.getElementById("bS").style.display = "none";
@@ -431,12 +460,13 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "";
                             }
                             
-                        </script>    
+                        </script>
                     <div class="scrollup fa fa-angle-double-up" title="Go to top"> ^ </div>
                     <div class="scrolldown fa fa-angle-double-up" title="Go to bottom"> v </div>
                     <script>

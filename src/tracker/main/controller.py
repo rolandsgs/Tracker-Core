@@ -1,5 +1,5 @@
-from app.models.user import User
-from app.database import DB
+from tracker.models.user import User
+from tracker.database import DB
 import pymongo
 import datetime
 

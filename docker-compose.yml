@@ -1,0 +1,37 @@
+version: '3.7'
+services:  
+    web-tracker:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: web-tracker01
+        container_name: web-tracker
+        volumes:
+            - ./tracker:/app/
+        ports:
+          - 8081:8080
+        depends_on: 
+          - db-tracker
+        restart: always
+    util-tracker:
+        build: 
+            context: ./util
+            dockerfile: Dockerfile
+        image: util-tracker
+        container_name: util-tracker
+        volumes:
+            - ./util:/util/
+        cap_add:
+            - SYS_ADMIN
+            - DAC_READ_SEARCH
+        privileged: true
+        depends_on: 
+            - db-tracker
+        restart: always
+    db-tracker:
+        image: mongo
+        container_name: db-tracker
+        restart: always
+
+        
+        

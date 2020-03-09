@@ -1,12 +1,12 @@
 from flask import render_template
         
-from app.main import bp
-from app.main.controller import list_active_sessions
-from app.main.controller import get_data_by_username
-from app.main.controller import how_many_access_by_labs
-from app.main.controller import how_many_users_active
-from app.models.user import User
-from app.database import DB
+from tracker.main import bp
+from tracker.main.controller import list_active_sessions
+from tracker.main.controller import get_data_by_username
+from tracker.main.controller import how_many_access_by_labs
+from tracker.main.controller import how_many_users_active
+from tracker.models.user import User
+from tracker.database import DB
 
 @bp.route('/')
 def index():

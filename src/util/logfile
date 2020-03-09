@@ -1,0 +1,4 @@
+/mnt/tracker/ Mounting directory...
+mount: only root can use "--options" option
+Updating database
+/usr/bin/python3: can't open file '/util/update_db.py': [Errno 2] No such file or directory

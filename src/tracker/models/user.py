@@ -1,6 +1,6 @@
 import datetime
 
-from app.database import DB
+from tracker.database import DB
 
 class User(object):
 

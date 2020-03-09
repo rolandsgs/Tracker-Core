@@ -62,7 +62,7 @@
         </div>
         <table style="width:76.45%; margin-left: 4.3%;background-color: #343a40; color: #f8f9fa; position: fixed; z-index: 9;">
             <thead >
-                <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 projetos mini" >
+                <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini" >
                     <th width="25%">PC</th>
                     <th width="25%">Status</th>
                     <th width="25%">Data - Hora(GMT-3)</th>
@@ -102,6 +102,7 @@
                         <a id="b4" class="navbar-brand inactiveLink" style="display: none" href="#">Lab4</a>
                         <a id="b5" class="navbar-brand inactiveLink" style="display: none" href="#">Lab5</a>
                         <a id="b6" class="navbar-brand inactiveLink" style="display: none" href="#">Lab6</a>
+                        <a id="b6" class="navbar-brand inactiveLink" style="display: none" href="#">Lab7</a>
                         <a id="bP" class="navbar-brand inactiveLink" style="display: none" href="#">Projetos</a>
                         <a id="bM" class="navbar-brand inactiveLink" style="display: none" href="#">Mini auditório</a>
                         <a id="bS" class="navbar-brand inactiveLink" style="display: none" href="#">Sala dos Professores</a>
@@ -140,7 +141,7 @@
                 <div>
                     <table style="width:90%; margin-left: 5%;background-color: #343a40; color: #f8f9fa;">
                         <thead >
-                            <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 projetos mini" >
+                            <tr id="tabelaInfo" class="table-item lab1 lab2 lab3 lab4 lab5 lab6 lab7 projetos mini" >
                                 <th width="25%">PC</th>
                                 <th width="25%">Status</th>
                                 <th width="25%">Data - Hora(GMT-3)</th>
@@ -166,6 +167,8 @@
                                     <tr id="tabelaInfo" class="table-item row lab5" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">
                                 {% elif 'L06' in u %}
                                     <tr id="tabelaInfo" class="table-item row lab6" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">
+                                {% elif 'L07' in u %}
+                                    <tr id="tabelaInfo" class="table-item row lab7" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">
                                 {% elif 'PROJ' in u %}
                                     <tr id="tabelaInfo" class="table-item row projetos" style="width:90%; margin-left: 5%;background-color: #343a4064; color: #000000">
                                 {% elif 'MINI' in u %}
@@ -214,6 +217,7 @@
                     <a class="nav-item nav-link lateralLink" onclick="B4();" data-filter=".lab4" href="">LAB 4</a>
                     <a class="nav-item nav-link lateralLink" onclick="B5();" data-filter=".lab5" href="">LAB 5</a>
                     <a class="nav-item nav-link lateralLink" onclick="B6();" data-filter=".lab6" href="">LAB 6</a>
+                    <a class="nav-item nav-link lateralLink" onclick="B7();" data-filter=".lab7" href="">LAB 7</a>
                     <a class="nav-item nav-link lateralLink" onclick="BP();" data-filter=".projetos" href="">Projetos</a>
                     <a class="nav-item nav-link lateralLink" onclick="BM();" data-filter=".mini" href="">Mini auditório</a>
                     <a class="nav-item nav-link lateralLink" onclick="addC(); BS();" data-filter=".prof" href="">Sala dos Professores</a>
@@ -226,6 +230,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -238,6 +243,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -250,6 +256,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -262,6 +269,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -274,6 +282,7 @@
                                 document.getElementById("b4").style.display = "";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -286,6 +295,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -298,6 +308,20 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "";
+                                document.getElementById("b7").style.display = "none";
+                                document.getElementById("bP").style.display = "none";
+                                document.getElementById("bM").style.display = "none";
+                                document.getElementById("bS").style.display = "none";
+                            }
+                            function B7(){
+                                document.getElementById("bA").style.display = "none";
+                                document.getElementById("b1").style.display = "none";
+                                document.getElementById("b2").style.display = "none";
+                                document.getElementById("b3").style.display = "none";
+                                document.getElementById("b4").style.display = "none";
+                                document.getElementById("b5").style.display = "none";
+                                document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "none";
@@ -322,6 +346,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "";
                                 document.getElementById("bS").style.display = "none";
@@ -334,6 +359,7 @@
                                 document.getElementById("b4").style.display = "none";
                                 document.getElementById("b5").style.display = "none";
                                 document.getElementById("b6").style.display = "none";
+                                document.getElementById("b7").style.display = "none";
                                 document.getElementById("bP").style.display = "none";
                                 document.getElementById("bM").style.display = "none";
                                 document.getElementById("bS").style.display = "";
