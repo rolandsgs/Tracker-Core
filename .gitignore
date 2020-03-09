@@ -84,6 +84,7 @@ alvo/
 # instalar todas as dependências necessárias.
 Pipfile.lock
 Pipfile
+.vscode /
 # arquivo de programação de batidas de aipo
 aipo-agenda
 
