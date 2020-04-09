@@ -6,7 +6,7 @@ if mountpoint -q -- "$dir";then
     printf '%s\n' "$dir it's already mounted, proceeding with updates"
 else
     printf '%s\n' "$dir Mounting directory..."
-    mount -t cifs //192.168.16.2/logins -o username=cinfoadmin,password=admin2019 "$dir"
+    mount -t cifs //192.168.16.2/logins -o username=cinfoadmin,password=****** "$dir"
 fi
 
 echo "Updating database"
